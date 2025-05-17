@@ -1,0 +1,14 @@
+name: workflow
+on: push
+jobs:
+  jobaya:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get code
+        uses: actions/checkout@v3
+      - name: install nodejs
+        uses: actions/setup-node@v3
+      - name: install dependencies
+        run: npm install
+      - name: run tests
+        run: npm test
